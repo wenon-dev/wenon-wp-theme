@@ -1,0 +1,233 @@
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width:768px) {
+    .navbar-alpha {
+        position: fixed;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        top: 0;
+        background-color: rgba(34, 34, 34, 0);
+    }
+}
+@media (min-width:768px) {
+    .navbar-alpha {
+        position: fixed;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        top: 0;
+        background-image: -webkit-linear-gradient(top, #3c3c3c 0, #222 100%);
+        background-image: -o-linear-gradient(top, #3c3c3c 0, #222 100%);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+        filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
+        background-repeat: repeat-x;
+        background-color: rgba(34, 34, 34, 0);
+        border-color: rgba(8, 8, 8, 0);
+    }
+}
+.index-page {
+    padding-top: 30px;
+	padding-bottom: 50px;
+}
+.brand {
+    position: relative;
+    left: 5%;
+}
+section {
+    width: 100%;
+    text-shadow: 2px;
+    padding-bottom: 5vh;
+}
+.background {
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    background-image: url('http://static.oneplus.cn/data/attachment/forum/201408/25/171845tz57ieiegdkz59th.jpg.w_768.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.post-cover {
+    z-index: -1;
+    height: auto;
+    width: 100%;
+}
+.bg-black {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.post-headers {
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.vol div p {
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+@media (max-width:768px) {
+    .vol {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-shadow: 1px 1px 10px #C5C5C5;
+    }
+    .vol:hover {
+        background-color: rgba(235, 235, 235, 0.9);
+    }
+    .vol .container-fluid .more {
+        display: none;
+    }
+    .vol:hover .container-fluid .more {
+        display: none;
+    }
+}
+@media (min-width:768px) {
+    .vol {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-shadow: 1px 1px 10px #C5C5C5;
+        transform: scale(0.95);
+        -webkit-transition: All 0.3s ease-in-out;
+        -moz-transition: All 0.3s ease-in-out;
+        -o-transition: All 0.3s ease-in-out;
+    }
+    .vol:hover {
+        transform: scale(1.03);
+        -webkit-transform: scale(1.03);
+        -moz-transform: scale(1.03);
+        -o-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+    }
+    .vol .container-fluid .more {
+        display: none;
+        letter-spacing: 2px;
+        font-size: 12px -webkit-transition: All 0.3s ease-in-out;
+        -moz-transition: All 0.3s ease-in-out;
+        -o-transition: All 0.3s ease-in-out;
+    }
+    .vol:hover .container-fluid .more {
+        display: block;
+        letter-spacing: 2px;
+        font-size: 12px padding-left: 10px padding-right: 10px -webkit-transition: All 0.3s ease-in-out;
+        -moz-transition: All 0.3s ease-in-out;
+        -o-transition: All 0.3s ease-in-out;
+        -webkit-animation-name: fadeIn;
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-direction: alternate;
+        animation-name: fadeIn;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-duration: 0.5s;
+        animation-direction: alternate;
+    }
+}
+a {
+    color: #2e6da4;
+    text-decoration: none;
+}
+a:focus, a:hover {
+    color: #5bc0de;
+    text-decoration: none;
+}
+.pd {
+    padding-bottom: 15px;
+}
+.il {
+    display: inline;
+}
+
+/*Block.html*/
+
+.block-wrap {
+    width: 300px;
+    height: 300px;
+}
+.image-wrap {
+    z-index: -1;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-image: url(http://desk.fd.zol-img.com.cn/g5/M00/07/01/ChMkJ1bX7buIPNhNABCBDOcnm1kAAMbFgOfaOEAEIEk328.jpg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-filter: blur(5px) brightness(.7);
+}
+.fullscreen {
+    display: block;
+    height: 100vh;
+}
+.circle {
+    position: relative;
+    border-radius: 0%;
+    width: 200px;
+    height: 200px;
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5)) saturate(0.5);
+    -webkit-transition: All 0.3s ease-in-out;
+    -moz-transition: All 0.3s ease-in-out;
+    -o-transition: All 0.3s ease-in-out;
+}
+.circle:hover {
+    position: relative;
+    border-radius: 10%;
+    width: 80%;
+    height: 80%;
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5)) saturate(0.7);
+    -webkit-transform: scale(1.2);
+}
+p.moresign {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    border-width: 2px;
+    border-color: #333;
+    border-style: solid;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 20px;
+    -webkit-transition: All 0.3s ease-in-out;
+}
+p.moresign:hover {
+    color: white;
+    background-color: #444;
+    text-shadow: 0px 0px 0px;
+}
+fixed-left {
+    margin-right: -15px;
+    position: fixed;
+    left: 50px;
+}
+fixed-right {
+    margin-right: -15px;
+    position: fixed;
+    right: 50px;
+}
