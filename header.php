@@ -22,7 +22,10 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?php echo home_url(); ?>">未浓</a>
+					<a class="navbar-brand" href="<?php echo home_url(); ?>">
+						<img class="brand-logo" alt="Brand" width="20" height="20" src="http://192.168.31.143/wp-content/uploads/2016/04/brand_logo.png">
+						<a class="navbar-brand" href="<?php echo home_url(); ?>">未浓</a>
+					</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">

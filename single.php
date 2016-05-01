@@ -22,14 +22,14 @@
 			<?php the_content(); ?>
 		</div>
 
-		<ul class="pager">
+		<!--<ul class="pager">
 			<li class="next">
 				<?php previous_post_link('%link'); ?>
 			</li>
 			<li class="previous">
 				<?php next_post_link('%link'); ?>
 			</li>
-		</ul>
+		</ul>-->
 	</div>
 	<!--<div>
 		<<div class="post-comment">

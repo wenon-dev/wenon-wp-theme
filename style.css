@@ -23,6 +23,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 /* 1.XXX */
+.brand-logo {
+	height: 20px;
+	width: 20px;
+}
 
 @charset "utf-8";
 .con-article {
