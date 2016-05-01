@@ -31,11 +31,11 @@
 			</li>
 		</ul>-->
 	</div>
-	<!--<div>
-		<<div class="post-comment">
+	<div>
+		<<div class="comment-area">
 			<?php comments_template(); ?>
 		</div>
-	</div>-->
+	</div>
 <?php endwhile;?>
 </div>
 
