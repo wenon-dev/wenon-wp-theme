@@ -32,7 +32,7 @@
 		</ul>-->
 	</div>
 	<div>
-		<<div class="comment-area">
+		<<div>
 			<?php comments_template(); ?>
 		</div>
 	</div>

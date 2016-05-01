@@ -20,15 +20,14 @@ if ( post_password_required() )
 	return;
 ?>
 
-	<div id="comments" class="comments-area post-area">
+	<div id="comments" class="post-area">
 
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
 		<div class="post-title-area"><h4 class="post-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'upbootwp' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				echo '有'.get_comments_number().'条评论';
 			?>
 		</h4></div>
 
@@ -41,15 +40,6 @@ if ( post_password_required() )
 		<?php endif; // check for comment navigation ?>
 
 		<li class="comment-list">
-			<!--<?php
-				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use upbootwp_comment() to format the comments.
-				 * If you want to override this in a child theme, then you can
-				 * define upbootwp_comment() and that will be used instead.
-				 * See upbootwp_comment() in inc/template-tags.php for more.
-				 */
-				wp_list_comments( array( 'callback' => 'upbootwp_comment' ) );
-			?>-->
 				<?php wp_list_comments('type=comment&callback=wenon_comment');
 			?>
 		</li><!-- .comment-list -->
@@ -71,7 +61,7 @@ if ( post_password_required() )
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'upbootwp' ); ?></p>
 	<?php endif; ?>
 
-	<?php
+	<div class="comment-area"><?php
 	// Arguments to edit the comment form
 
 	$args = array(
@@ -134,6 +124,6 @@ if ( post_password_required() )
 		),
 	);
 
-	comment_form($args); ?>
+	comment_form($args); ?></div>
 
 </div><!-- #comments -->

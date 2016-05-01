@@ -164,6 +164,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .post-content {
     padding: 15px;
 }
+.comment-area {
+    padding-left: 50px;
+	padding-right: 50px;
+}
 img {
     vertical-align: middle;
     display: block;

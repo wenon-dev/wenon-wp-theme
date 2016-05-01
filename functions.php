@@ -4,7 +4,7 @@
 
 	<?php function wenon_comment($comment, $args, $depth)
 	{ $GLOBALS['comment'] = $comment; ?>
-	<li class="comment" id="li-comment-<?php comment_ID(); ?>">
+	<li class="comment-area" id="li-comment-<?php comment_ID(); ?>">
 		<div class="media-body">
 			<div class="media-left">
 				<a href="#" class="media-object">
@@ -19,18 +19,15 @@
 				<?php endif; ?>
 
 				<p><?php comment_text(); ?></p>
+
+				<div class="reply">
+					<?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?> &nbsp;&nbsp;
+					<?php edit_comment_link('修改'); ?>
+				</div>
 			</div>
 
 			<div class="comment_content" id="comment-<?php comment_ID(); ?>">
-				<div class="comment_text">
 
-
-
-					<div class="reply">
-						<?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?> &nbsp;&nbsp;
-						<?php edit_comment_link('修改'); ?>
-					</div>
-				</div>
 			</div>
 		</div>
 	</li>
