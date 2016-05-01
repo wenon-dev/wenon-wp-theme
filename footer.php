@@ -1,5 +1,5 @@
 </div>
-	<footer id="footer">
+	<div class="container" id="footer">
 		<div class="container-fluid">
 			<p class="footer-title">© 未浓电子杂志</p>
 			<div class="footer-infos">
@@ -12,7 +12,7 @@
 				<a href="contribution.html" target="_blank">征稿启事</a>
 			</div>
 		</div>
-	</footer>
+	</div>
 	<?php wp_footer(); ?>
 </body>
 </html>
