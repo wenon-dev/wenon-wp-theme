@@ -7,27 +7,39 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap/css/bootstrap.css" >
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/custom.css">
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.12.3.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/bootstrap/js/bootstrap.min.js"></scrip>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text.javascript">
+		var existAdminBar = document.getElementById("wpadminbar");
+		if(existAdminBar) { 
+		   document.getElementById("nav").className = "navbar navbar-default navbar-fixed-top2 navbar-fixed-top";
+		} 
+	</script>
 	<?php wp_head();?>
 
 
 </head>
 
 	<body>
-		<div class="navbar navbar-default navbar-fixed-top">
+		<div id="nav" class="navbar navbar-default navbar-fixed-bottom">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="<?php echo home_url(); ?>">
-						<img class="brand-logo" alt="Brand" width="20" height="20" src="http://192.168.31.143/wp-content/uploads/2016/04/brand_logo.png">
-						<a class="navbar-brand" href="<?php echo home_url(); ?>">未浓</a>
+					<a class="navbar-logo" href="<?php echo home_url(); ?>">
+						<img class="wenon-logo" alt="Brand" src="http://7xt9rf.com1.z0.glb.clouddn.com/WPtheme/wenon-no.png" style="display: inline;margin-top: 8px;">
 					</a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="glyphicon glyphicon-glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+					</button>
 				</div>
 				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<?php 
+							if ( is_user_logged_in() ) { 
+							echo '<li><a href="wp-admin">你好，'.wp_get_current_user()->display_name.'~</a></li>'; 
+							} else { 
+							echo '<li><a href="wp-login.php">登入</a></li>'; 
+							} 
+						?> 
+					</ul>
 					<ul class="nav navbar-nav">
 						<?php wp_list_pages(array('title_li' => '')); ?>
 					</ul>

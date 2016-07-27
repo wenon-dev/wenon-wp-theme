@@ -1,5 +1,26 @@
 <?php get_header(); ?>
-<div class="index-page container">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/timeline.css">
+
+<section id="cd-timeline" class="cd-container">
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="\wp-content\themes\wenon-WPtheme\assets\images\cd-icon-picture.svg" alt="Picture">
+			</div>
+			<div class="cd-timeline-content">
+				<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+				<p><?php the_excerpt(); ?></p>
+				<a href="<?php the_permalink() ?>" class="cd-read-more" target="_blank">阅读全文</a>
+				<span class="cd-date"><?php the_time('Y-m-d')?> by <?php the_author();?></span>
+			</div>
+		</div>
+	<?php endwhile; else: ?>
+		<p><?php _e('Sorry, this page does not exist.'); ?></p>
+	<?php endif; ?>
+
+</section>
+
+<!-- <div class="index-page container">
 	<div class="container">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -35,5 +56,5 @@
 			<p><?php _e('Sorry, this page does not exist.'); ?></p>
 		<?php endif; ?>
 	</div>
-</div>
+</div> -->
 <?php get_footer(); ?>

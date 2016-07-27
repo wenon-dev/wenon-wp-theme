@@ -20,7 +20,27 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		2. XXX
 		3. single.php
 */
+.navbar-logo {
+    /* float: left; */
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
 
+.wenon-logo {
+	width: auto;
+	height: 35px;
+}
+
+.navbar-fixed-top2 {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px);
+.navbar-fixed-top2 {
+    top: 48px;
+}
 
 /* 1.XXX */
 .brand-logo {
@@ -187,3 +207,40 @@ img {
     -ms-filter: blur(15px);
     filter: blur(15px);
 }
+
+/* Time Line Module*/
+
+ /* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Microsoft Yahei";
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  color: #7f8c97;
+  background-color: #e9f0f5;
+}
+
+
+
+img {
+  max-width: 100%;
+}
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
