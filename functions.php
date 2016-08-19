@@ -1,34 +1,37 @@
 <?php
 	add_theme_support( "post-thumbnails" );  // 开启文章缩略图
+	function wenon_get_archive_category() {
+		$category = get_the_category();   //默认获取当前分类ID
+		echo $category[0]->cat_name;    //使用$categories->cat_name不能获得正确值,应该$categories[0]->cat_name才能正确工作。
+	}
+	function wenon_category_title( $before = '', $after = '' ) { //过滤分类目录前缀
+		$raw_title = get_the_archive_title();
+		$title = str_replace( "分类：" , "" , $raw_title );
+		echo $before.$title.$after;
+	}
+	function wenon_archive_description( $type = '',$before = '', $after = '' ) {
+		$raw_description = get_the_archive_description();//获取分类描述
+		if ( $raw_description ) {
+			$des_array = explode( '|' , $raw_description );
+			$description = array_shift( $des_array );
+			if ( $type == 'description') {
+				echo $before . $description . $after;
+			} elseif ( $type == 'info' ) {
+				foreach( $des_array as $info_array) {
+					$info_array = str_replace( '#!' , '<span class="label label-info">' , $info_array );
+					$info_array = str_replace( '!#' , '</span>' , $info_array );
+					echo $before . $info_array . $after;
+				} 
+			}
+		}
+	}
+	function wenon_category_image() {
+		$image_url = z_taxonomy_image_url($cat->term_id);
+		$none_image_url = "http://testing.wenon.org/wp-content/uploads/2016/08/default_cat_cover.png";
+		if ( $image_url != "" ) {
+			echo $image_url;
+		} else {
+			echo $none_image_url;
+		}
+	}
 ?>
-
-	<?php function wenon_comment($comment, $args, $depth)
-	{ $GLOBALS['comment'] = $comment; ?>
-	<li class="comment-area" id="li-comment-<?php comment_ID(); ?>">
-		<div class="media-body">
-			<div class="media-left">
-				<a href="#" class="media-object">
-				<?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?></a>
-			</div>
-			<div class="media-body">
-				<h3 class="media-heading"><?php echo get_comment_author_link(); ?></h4>
-				<small><?php echo get_comment_time('Y-m-d H:i'); ?></small>
-				<?php if ($comment->comment_approved == '0') : ?>
-				<span>你的评论正在审核，稍后会显示出来！</span>
-				<br />
-				<?php endif; ?>
-
-				<p><?php comment_text(); ?></p>
-
-				<div class="reply">
-					<?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?> &nbsp;&nbsp;
-					<?php edit_comment_link('修改'); ?>
-				</div>
-			</div>
-
-			<div class="comment_content" id="comment-<?php comment_ID(); ?>">
-
-			</div>
-		</div>
-	</li>
-	<?php } ?>-

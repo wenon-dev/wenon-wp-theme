@@ -8,43 +8,79 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/custom.css">
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text.javascript">
-		var existAdminBar = document.getElementById("wpadminbar");
-		if(existAdminBar) { 
-		   document.getElementById("nav").className = "navbar navbar-default navbar-fixed-top2 navbar-fixed-top";
-		} 
-	</script>
+
+	<link href="//wenon.org/css/main.css" rel="stylesheet" type="text/css">
 	<?php wp_head();?>
 
 
 </head>
+<?php if (is_home() || is_front_page()) { ?>
+	<body style="font-family: 'Microsoft Yahei'; background-image: url(//wenon.org/images/ui/background-x-g.png);">
+<?php }else{ ?>
+	<body style="font-family: 'Microsoft Yahei'; background-color: #F7F7F7;">
+<?php }?>
+		<nav id="menu">
 
-	<body>
-		<div id="nav" class="navbar navbar-default navbar-fixed-bottom">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-logo" href="<?php echo home_url(); ?>">
-						<img class="wenon-logo" alt="Brand" src="http://7xt9rf.com1.z0.glb.clouddn.com/WPtheme/wenon-no.png" style="display: inline;margin-top: 8px;">
-					</a>
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="glyphicon glyphicon-glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-					</button>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<?php 
-							if ( is_user_logged_in() ) { 
-							echo '<li><a href="wp-admin">你好，'.wp_get_current_user()->display_name.'~</a></li>'; 
-							} else { 
-							echo '<li><a href="wp-login.php">登入</a></li>'; 
-							} 
-						?> 
-					</ul>
-					<ul class="nav navbar-nav">
-						<?php wp_list_pages(array('title_li' => '')); ?>
-					</ul>
+		</nav>
+
+
+<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top:50px">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">菜单</h4>
+					</div>
+					<div class="modal-body">
+
+						<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default">
+									<?php
+										if ( is_user_logged_in() ) {
+											echo '<a href="'.admin_url().'">Allahu Akbar，'.wp_get_current_user()->display_name.'~</a>';
+										} else {
+											echo '<a href="'.home_url().'/wp-login.php">登入</a>';
+										}
+									?>
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default"><a href="<?php echo home_url().'/wp-login.php'?>">注册</a></button>
+							</div>
+						</div>
+
+						<br>
+						
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="文章……">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button">搜索</button>
+							</span>
+						</div>
+
+						<br>
+						
+						<ul class="list-group">
+							<?php wp_list_pages(array('title_li' => '','class' => 'list-group-item')); ?>
+						</ul>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="main">
+		<?php if (is_home() || is_front_page()) { ?>
+		<div id="nav" class="navbar-alpha">
+			<div class="container" style="padding-top: 5px">
+				<a data-toggle="modal" data-target="#myModal"><img class="brand" alt="未浓" src="//wenon.org/images/ui/brandlogo.png" width="60" height="60"></a>
+			</div>
+		</div>
+		<?php }else if(!is_category()){ ?>
+
+	  
+		<?php }?>
+		<div id="page">
+		<div class="main">

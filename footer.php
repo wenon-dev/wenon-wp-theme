@@ -14,5 +14,20 @@
 		</div>
 	</div>
 	<?php wp_footer(); ?>
+	</div>
 </body>
+	<script src="http://cdn.bootcss.com/jQuery.mmenu/5.6.1/js/jquery.mmenu.all.min.js"></script>
+	<script>
+		$(document).ready(function() { 
+			var existAdminBar = document.getElementById("wpadminbar");
+			if(existAdminBar) {
+				if (document.getElementById("nav")) {
+					document.getElementById("nav").className = "navbar-alpha2";
+				} else { 
+					if (window.screen.width >= 768){ document.getElementById("top").style = "top:32px;"; }
+					else {}
+				}
+			}
+		}); 
+	</script>
 </html>

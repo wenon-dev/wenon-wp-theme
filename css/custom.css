@@ -51,12 +51,16 @@
     }
 }
 .index-page {
-    padding-top: 70px;
+    padding-top: 20px;
 	padding-bottom: 50px;
+	margin-top:50px;
+	color: #3c3c3c3;
 }
 .brand {
     position: relative;
     left: 5%;
+    width: 60px;
+    height: 60px;
 }
 section {
     width: 100%;
@@ -82,7 +86,7 @@ section {
 }
 .post-headers {
     letter-spacing: 2px;
-    font-size: 25px;
+    font-size: 30px;
     margin-top: 10px;
 }
 .vol div p {
@@ -107,7 +111,7 @@ section {
 }
 @media (min-width:768px) {
     .vol {
-        padding-top: 10px;
+        padding-top: 20px;
         padding-bottom: 10px;
         text-shadow: 1px 1px 10px #C5C5C5;
         transform: scale(0.95);

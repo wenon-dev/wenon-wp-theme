@@ -21,79 +21,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		3. single.php
 */
 
-.page_item {
-	position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-.navbar-logo {
-    /* float: left; */
-    height: 50px;
-    padding: 15px 15px;
-    font-size: 18px;
-    line-height: 20px;
-}
-
-.wenon-logo {
-	width: auto;
-	height: 35px;
-}
-
-@media (max-width:768px) {
-    .navbar-alpha2 {
-        position: fixed;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-        top: 46px;
-        background-color: rgba(34, 34, 34, 0);
-    }
-	.navbar-fixed-top2 {
-		padding-right: 0;
-		padding-left: 0;
-		max-height: 340px;
-		position: fixed;
-		top: 46px;
-		right: 0;
-		left: 0;
-		z-index: 1030;
-		border-width: 0 0 1px;
-	}
-}
-@media (min-width:768px) {
-    .navbar-alpha2 {
-        position: fixed;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-        top: 32px;
-        background-image: -webkit-linear-gradient(top, #3c3c3c 0, #222 100%);
-        background-image: -o-linear-gradient(top, #3c3c3c 0, #222 100%);
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0) 100%);
-        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
-        filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
-        background-repeat: repeat-x;
-        background-color: rgba(34, 34, 34, 0);
-        border-color: rgba(8, 8, 8, 0);
-    }
-	.navbar-fixed-top2 {
-		padding-right: 0;
-		padding-left: 0;
-		max-height: 340px;
-		position: fixed;
-		top: 32px;
-		right: 0;
-		left: 0;
-		z-index: 1030;
-		border-width: 0 0 1px;
-	}
-}
-
 
 /* 1.XXX */
 .brand-logo {
@@ -119,7 +46,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         padding-bottom: 60px;
     }
     .title {
-        margin-top: 50px;
+        margin-top: 90px;
         color: #FFFFFF;
         font-size: 48px;
     }
@@ -132,7 +59,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     }
     #footer .footer-infos {
         letter-spacing: 3px;
-        padding-top: 10px;
+        padding-top: 20px;
         padding-bottom: 40px;
     }
     #footer .footer-infos p {
@@ -144,7 +71,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         letter-spacing: 2px;
         font-size: 26px;
         color: #ffffff;
-        padding-top: 50px;
+        padding-top: 90px;
     }
     #footer .footer-contact {
         letter-spacing: 2px;
@@ -215,7 +142,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     display: block;
     margin: 20px 5px;
     padding: 20px;
-    padding-top: 20px;
+    padding-top: 100px;
     border-bottom-width: thin;
     border-bottom-style: solid;
     border-bottom-color: #EEE;
@@ -260,40 +187,3 @@ img {
     -ms-filter: blur(15px);
     filter: blur(15px);
 }
-
-/* Time Line Module*/
-
- /* --------------------------------
-
-Primary style
-
--------------------------------- */
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Microsoft Yahei";
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 100%;
-  color: #7f8c97;
-  background-color: #e9f0f5;
-}
-
-
-
-img {
-  max-width: 100%;
-}
-
-/* --------------------------------
-
-Modules - reusable parts of our design
-
--------------------------------- */

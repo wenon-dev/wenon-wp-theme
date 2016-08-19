@@ -1,60 +1,44 @@
 <?php get_header(); ?>
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/timeline.css">
+<div class="index-page container">
+	<?php 
+		foreach (get_categories() as $cat) : 
+			if ( get_category_link($cat->term_id) == "uncategorized" ) {
+				continue;
+			}
+	?>
 
-<section id="cd-timeline" class="cd-container">
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="\wp-content\themes\wenon-WPtheme\assets\images\cd-icon-picture.svg" alt="Picture">
+		<div class="row vol" onclick="<?php the_permalink() ?>">
+			<div class="container-fluid col-md-7 col-xs-12">
+				<img class="img-rounded post-cover" src="<?php 
+					$image_url = z_taxonomy_image_url($cat->term_id);
+					$none_image_url = "http://testing.wenon.org/wp-content/uploads/2016/08/default_cat_cover.png";
+					if ( $image_url != "" ) {
+						echo $image_url;
+					} else {
+						echo $none_image_url;
+					}
+				?>"></img>
 			</div>
-			<div class="cd-timeline-content">
-				<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-				<p><?php the_excerpt(); ?></p>
-				<a href="<?php the_permalink() ?>" class="cd-read-more" target="_blank">阅读全文</a>
-				<span class="cd-date"><?php the_time('Y-m-d')?> by <?php the_author();?></span>
+			<div class="container-fluid col-md-5 col-xs-12 text-left">
+				<a href="<?php echo get_category_link($cat->term_id); ?>" style="color:black">
+					<h1 class="post-headers"><?php echo $cat->cat_name; ?></h1>
+				</a>
+				<div class="div-excerpt">
+					<?php 
+					$raw_cat_description = category_description($cat->term_id); //获取当前分类描述
+					if ( $raw_cat_description ) {
+						$des_cat_array = explode( '|' , $raw_cat_description );
+						$cat_description = $des_cat_array[0];
+						echo $cat_description;
+					}
+					?>
+				</div>
+				<p class="moresign" onclick="location.href='<?php echo get_category_link($cat->term_id); ?>'">Read More</p>
 			</div>
 		</div>
-	<?php endwhile; else: ?>
-		<p><?php _e('Sorry, this page does not exist.'); ?></p>
-	<?php endif; ?>
-
-</section>
-
-<!-- <div class="index-page container">
-	<div class="container">
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-			<div class="row vol">
-				<div class="container-fluid col-md-7 col-xs-12">
-					<div class="img-rounded post-cover">
-						<?php
-							if ( has_post_thumbnail() ) {
-								the_post_thumbnail('thumbnail',array(
-								    'alt' => trim(strip_tags( $post->post_title )),
-								    'title'=> trim(strip_tags( $post->post_title )),
-								    'class' => 'img-rounded post-cover'
-								    	)
-									);
-								}
-						?>
-					</div>
-				</div>
-				<div class="container-fluid col-md-5 col-xs-12 text-left">
-					<a href="<?php the_permalink() ?>" rel="postlink" title="<?php the_title_attribute(); ?>">
-						<h1 class="post-headers"> <?php the_title(); ?></h1>
-					</a>
-					<div class="div-excerpt">
-						<?php the_excerpt(); ?>
-					</div>
-					<div class="div-meta-data">
-						<span><?php the_time('Y-m-d')?> by <?php the_author();?><span>
-					</div>
-				</div>
-			</div>
-
-			<?php endwhile; else: ?>
-			<p><?php _e('Sorry, this page does not exist.'); ?></p>
-		<?php endif; ?>
-	</div>
-</div> -->
+		<hr>
+		
+ <?php endforeach; ?>
+		
+</div>
 <?php get_footer(); ?>
