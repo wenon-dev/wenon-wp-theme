@@ -294,6 +294,117 @@ img {
 
 /* --------------------------------
 
-Modules - reusable parts of our design
+Modules - Sidebar
 
 -------------------------------- */
+
+	.wenon-sidebar {
+		position: fixed;
+		top: 0;
+		left: -280px;
+		width: 300px;
+		height: 100%;
+		-webkit-transition: All 0.3s ease-in-out;
+		-moz-transition: All 0.3s ease-in-out;
+		-o-transition: All 0.3s ease-in-out;
+	    background-color: rgba(0,0,0,0);
+	}
+	.wenon-sidebar-content {
+		padding-top: 70px;
+		display: none;
+		-webkit-transition: All 0.3s ease-in-out;
+		-moz-transition: All 0.3s ease-in-out;
+		-o-transition: All 0.3s ease-in-out;
+		width: 95%;
+		overflow-y:auto;
+		height:90%;
+	}
+	.wenon-sidebar>.pullsign-bg {
+		top: 50%;
+		position: relative;
+		color: white;
+		left: 285px;
+		width: 15px;
+        height: 45px;
+        border-radius: 4px;
+        background-color: black;
+	}
+	.wenon-sidebar>ul {
+		display: block;
+		position: relative;
+		margin-top: 10vh;
+	}
+	.wenon-sidebar>ul>li {
+		padding: 15px;
+	}
+	.wenon-sidebar>ul>li>a {
+		color: black;
+	}
+
+	.wenon-sidebar:hover {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 300px;
+		height: 100%;
+		background-color: rgba(255,255,255,0.95);
+		box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+		z-index: 1020;
+	}
+	.wenon-sidebar:hover>.wenon-sidebar-content {
+		display: block;
+		padding-top: 70px;
+	}
+	.wenon-sidebar:hover>.pullsign-bg {
+		color: black;
+        background-color: rgba(0,0,0,0);
+	}
+    .wenon-sidebar>.pullsign-bg>.pullsign {
+        padding-top: 15px;
+        padding-left: 1px;
+    }
+	@media screen and (max-width: 768px) {
+		.wenon-sidebar {
+			position: fixed;
+			top: 0;
+			left: -280px;
+			width: 300px;
+			height: 100%;
+			-webkit-transition: All 0.3s ease-in-out;
+			-moz-transition: All 0.3s ease-in-out;
+			-o-transition: All 0.3s ease-in-out;
+			background-color: rgba(0,0,0,0);
+		}
+		.wenon-sidebar-content {
+			padding-top: 50px;
+			width: 95%;
+		}
+        .wenon-sidebar>.pullsign-bg {
+            top: 48%;
+            position: relative;
+            color: white;
+            left: 280px;
+            width: 15px;
+            height: 45px;
+            background-color: black;
+            border-radius: 4px;
+        }
+		.wenon-sidebar:hover {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 100%;
+			background-color: rgba(255,255,255,0.95);
+			box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+			z-index: 1020;
+		}
+		.wenon-sidebar:hover>.pullsign-bg {
+			top: 50%;
+			position: relative;
+			color: black;
+			left: 285px;
+			width: 15px;
+			background: rgba(0,0,0,0);
+		}
+	}

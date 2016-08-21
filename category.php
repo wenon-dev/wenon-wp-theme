@@ -83,7 +83,7 @@ h2 {
         <div class="container col-md-6 col-xs-12">
 		<h2>目录</h2>
             <ul class="list-group" style="padding-top: 10px;font-size:16px">
-                <li class="list-group-item disabled">目录</li>
+                <li class="list-group-item disabled">卷首语</li>
 				<?php
 					while ( have_posts() ) : the_post();
 						get_template_part( 'content-series', get_post_format() );
@@ -99,7 +99,7 @@ h2 {
 				?>
             </ul>
         </div>
-        <div style="margin-top:10px"><a href="../../index.html">返回首页</a></div>
+        <div style="margin-top:10px"><a href="<?php echo site_url();?>">返回首页</a></div>
 		
 		</div>
 		</div>
@@ -126,10 +126,5 @@ h2 {
 	</section><!-- .content-area -->
 
 </body>
-	<script type="text.javascript">
-		var existAdminBar = document.getElementById("wpadminbar");
-		if(existAdminBar) {
-		   document.getElementById("nav").className = "navbar-alpha2";
-		}
-	</script>
+<?php get_sidebar(); ?>
 </html>

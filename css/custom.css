@@ -77,7 +77,6 @@ section {
     background-repeat: no-repeat;
 }
 .post-cover {
-    z-index: -1;
     height: auto;
     width: 100%;
 }

@@ -1,6 +1,7 @@
 # 一个 Wordpress 主题
 
-基本等于没有的主题。要什么缺什么。
+算不上半成品的主题
+道阻且长
 
 主站： www.wenon.org
-成品： testing.wenon.org
+在建： testing.wenon.org

@@ -18,7 +18,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">卷首语</a></li>
-			  <li><a href="<?php echo(site_url());?>">返回首页</a></li>
+			  <li><a href="<?php echo site_url();?>">返回首页</a></li>
               <li><a href="//wenon.org/aboutus.html">关于我们</a></li>
             </ul>
           </div>
@@ -69,4 +69,5 @@
 <?php endwhile;?>
 </div>
 
+<?php get_sidebar(); ?>
 <?php get_footer();?>
